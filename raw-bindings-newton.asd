@@ -13,22 +13,15 @@
    (:module "spec"
             :components
             ((:cffi/c2ffi-file
-              "newton.h"
+              "Newton.h"
               :package #:raw-bindings-newton
               :foreign-library-name "raw-bindings-newton::libnewton"
-              :include-sources (
-
-                                ;; FEEEEED MEEE
-
-                                )
+              :include-sources ("Newton.h")
               :exclude-sources :all
-              ;; :ffi-include-predicate "raw-bindings-newton.ffi::include?"
               :ffi-name-transformer "raw-bindings-newton.ffi::ffi-name-transformer"
               :ffi-export-predicate "raw-bindings-newton.ffi::ffi-export-predicate"
 
-              :foreign-library-spec ((:unix (:or "libnewton.so" "libnewton.so.1" "libnewton.dylib")
-                                            ;;"/home/baggers/Cnewton/c++/newton-0.13/newton/src/.libs/libnewton.so"
-                                            )
-                                     (:windows "newton.dll")
-                                     (t (:default "newton.so"))))))
-   (:file "precision")))
+              :foreign-library-spec ((:unix ;;(:or "libnewton.so" "libnewton.so.1" "libnewton.dylib")
+                                      "/home/baggers/Code/c/newton-dynamics/lib/libNewton.so")
+                                     (:windows "libNewton.dll")
+                                     (t (:default "libNewton.so"))))))))
