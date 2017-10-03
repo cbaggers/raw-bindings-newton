@@ -9,10 +9,10 @@
 
 (CFFI:DEFCTYPE FUNCTION-POINTER :POINTER)
 
-(CFFI:DEFINE-FOREIGN-LIBRARY LIBNEWTON
-  (:UNIX "/home/baggers/Code/c/newton-dynamics/lib/libNewton.so")
-  (:WINDOWS "libNewton.dll")
-  (COMMON-LISP:T (:DEFAULT "libNewton.so")))
+(cffi:define-foreign-library libnewton
+  (:darwin (:or "lib/libNewton.dylib" "libNewton.dylib"))
+  (:unix (:or "lib/libNewton.so" "libNewton.so"))
+  (:windows (:or "lib/newton.dll" "newton.dll")))
 
 (CFFI:USE-FOREIGN-LIBRARY LIBNEWTON)
 
@@ -4954,4 +4954,3 @@
     ("M-VERTEXCOUNT" . M-VERTEXCOUNT) ("M-HEIGHT" . M-HEIGHT)
     ("M-RADIO1" . M-RADIO1) ("M-RADIO0" . M-RADIO0) ("M-RADIO" . M-RADIO)
     ("M-Z" . M-Z) ("M-Y" . M-Y) ("M-X" . M-X)))
-
