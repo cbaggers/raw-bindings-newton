@@ -1,6 +1,6 @@
 ;;;; raw-bindings-newton.asd
 
-(asdf:defsystem #:raw-bindings-newton
+(asdf:defsystem #:raw-bindings-newton-gen
   :description "Absolute minimal bindings of NEWTON"
   :author "Chris Bagley (Baggers) <techsnuffle@gmail.com>"
   :license "BSD 2 Clause"
@@ -19,8 +19,8 @@
               :include-sources ("Newton.h")
               :exclude-sources :all
               :ffi-name-transformer "raw-bindings-newton.ffi::ffi-name-transformer"
-              :ffi-export-predicate "raw-bindings-newton.ffi::ffi-export-predicate"
+              :ffi-name-export-predicate "raw-bindings-newton.ffi::ffi-export-predicate"
               :foreign-library-spec ((:unix ;;(:or "libnewton.so" "libnewton.so.1" "libnewton.dylib")
-                                      "/home/baggers/Code/c/newton-dynamics/lib/libNewton.so")
+                                      "/home/baggers/Code/lisp/the-works/raw-bindings-newton/lib/libNewton.so")
                                      (:windows "libNewton.dll")
                                      (t (:default "libNewton.so"))))))))
