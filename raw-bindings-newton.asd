@@ -9,4 +9,5 @@
   :components
   ((:file "package")
    (:file "c2ffi-transforms")
+   #+linux
    (:file "spec/Newton.x86_64-pc-linux-gnu")))

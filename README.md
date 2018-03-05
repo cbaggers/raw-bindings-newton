@@ -1,4 +1,4 @@
-# raw-bindings-newton
+# raw-bindings-newton (PRE ALPHA)
 
 This is simply a package containing the raw bindings for NEWTON.
 
@@ -6,4 +6,4 @@ It is not meant for direct consumption, instead it is to allow multiple library 
 
 ## WARNING
 
-This currently makes use of some unreleased changes to cffi. I'll remove this note once those issues have been resolved
+Full of hacks, only 'working' on linux. Not advisable right now
